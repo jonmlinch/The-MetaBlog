@@ -1,6 +1,6 @@
 <h1>Add a new article</h1>
 
-<form method="POST" action="/articles" id="new_article">
+<form method="POST" action="/articles" id="new_article" required>
 	Title: <br>
 	<input type="text" name="title"><br>
 	<label name="name">Author:</label><br>
@@ -14,5 +14,7 @@
 	</select><br>
 	Content: <br>
 	<textarea form="new_article" name="content"></textarea><br>
+	Tags:<br>
+	<input type="text" name="tags" class="form-control" placeholder="Tag topics! Separate by commas!">
 	<input type="submit" name="Submit">
 </form>
