@@ -1,0 +1,18 @@
+<h1>Add a new article</h1>
+
+<form method="POST" action="/articles" id="new_article">
+	Title: <br>
+	<input type="text" name="title"><br>
+	<label name="name">Author:</label><br>
+	<select name="authorId" class="form-control">
+		<option value="0">Choose your name below</option>
+		<% if(authors) { %>
+				<% authors.forEach(function(a){ %>
+					<option value="<%=a.id%>"><%=a.name%></option>
+				<%})%>
+			<%}%>
+	</select><br>
+	Content: <br>
+	<textarea form="new_article" name="content"></textarea><br>
+	<input type="submit" name="Submit">
+</form>
