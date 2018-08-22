@@ -8,13 +8,15 @@ var app = express();
 
 //set and use statements
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'))
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));
 
 //Include controllers
 app.use('/articles', require('./controllers/articles'));
 app.use('/authors', require('./controllers/authors'));
-app.use('/comments', require('./controllers/comments'))
+app.use('/comments', require('./controllers/comments'));
+app.use('/tags', require('./controllers/tags'))
 
 
 //define routes
